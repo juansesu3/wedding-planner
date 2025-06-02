@@ -1,0 +1,7 @@
+{
+    "navbar":{
+        "home": "Inicio",
+        "register": "Registro",
+        "login": "Iniciar sesión"
+    }
+}
