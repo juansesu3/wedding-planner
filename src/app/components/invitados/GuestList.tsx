@@ -9,8 +9,8 @@ const initialGuests = [
 ];
 
 const GuestList = () => {
-  const [guests, setGuests] = useState(initialGuests);
-
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const [guests, setGuests] = useState(initialGuests);
   return (
     <div className="min-h-screen px-4 py-6 sm:px-8 bg-gray-50/50 text-[#5B7553]"  >
       <h1 className="text-3xl font-extrabold mb-6 text-center sm:text-left" style={{ color: '#C97C5D' }}>

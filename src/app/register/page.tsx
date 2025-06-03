@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useRouter, useParams } from "next/navigation";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const Page = () => {
   const [guestData, setGuestData] = useState({

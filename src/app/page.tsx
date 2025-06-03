@@ -1,4 +1,4 @@
-'use client';
+
 export default function Home() {
   const weddingDate = new Date('2026-06-26');
   const today = new Date();
