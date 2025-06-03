@@ -41,19 +41,16 @@ export async function POST(request: Request) {
       JWT_SECRET,
       { expiresIn: "7d" }
     );
-
-    return NextResponse.json(
-      {
-        message: "Login exitoso",
-        token,
-        user: {
-          nombre: user.nombre,
-          correo: user.correo,
-          rol: user.rol,
-        },
-      },
-      { status: 200 }
-    );
+    const res = NextResponse.json({ success: true });
+    res.cookies.set('user_token', token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === 'production',
+      path: '/',
+      maxAge: 60 * 60 * 24
+    });
+  
+    return res;
+   
   } catch (error) {
     console.error("Error en login:", error);
     return NextResponse.json(
