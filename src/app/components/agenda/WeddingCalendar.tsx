@@ -12,7 +12,7 @@ const WeddingCalendar = () => {
     { title: '💐 Reunión con florista', date: '2025-07-10' },
     { title: '👗 Prueba de vestido', date: '2025-07-15' },
     { title: '🎶 Reunión con DJ', date: '2025-08-02' },
-    { title: '💍 Día de la boda', date: '2025-09-15' },
+    { title: '💍 Día de la boda', date: '2026-06-26' },
   ]);
 
   const handleDateClick = (info: { dateStr: string }) => {

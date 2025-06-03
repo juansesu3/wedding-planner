@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 import {
   FaHome,
@@ -12,7 +13,13 @@ import {
 } from 'react-icons/fa';
 
 const NavBar = ({children}: {children: React.ReactNode}) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const pathname = usePathname(); // obtenemos la ruta actual
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Si la URL contiene 'login', no renderizamos nada (ni el navbar ni el contenido)
+  if (pathname.includes('login')) {
+    return <>{children}</>; // solo renderizamos el contenido principal sin navbar
+  }
 
   const menuItems = [
     { name: 'Inicio', icon: <FaHome />, href: '/' },
