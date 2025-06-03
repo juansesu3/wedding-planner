@@ -19,11 +19,14 @@ export default function middleware(req: NextRequest) {
 
   const token = req.cookies.get("user_token")?.value;
 
-  // Ruta protegida raíz "/"
-  const isProtectedRoot = pathname === "/" || pathname === "";
+  // Definir rutas protegidas (puedes agregar más aquí)
+  const protectedRoutes = ["/", "/agenda", "/invitados"];
 
-  // Redirige a /login si no hay token
-  if (isProtectedRoot && !token) {
+  // Verificar si la ruta actual es protegida
+  const isProtectedRoute = protectedRoutes.some((route) => pathname === route);
+
+  // Redirigir a /login si está en ruta protegida y no hay token
+  if (isProtectedRoute && !token) {
     const url = req.nextUrl.clone();
     url.pathname = "/login";
     return NextResponse.redirect(url);
@@ -34,8 +37,10 @@ export default function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    "/",
+    "/", 
     "/login",
+    "/agenda",
+    "/invitados",
     "/:path*",
   ],
 };

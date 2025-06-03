@@ -17,8 +17,8 @@ const NavBar = ({children}: {children: React.ReactNode}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Si la URL contiene 'login', no renderizamos nada (ni el navbar ni el contenido)
-  if (pathname.includes('login')) {
-    return <>{children}</>; // solo renderizamos el contenido principal sin navbar
+  if (['login', 'register'].some(route => pathname.includes(route))) {
+    return <>{children}</>;
   }
 
   const menuItems = [

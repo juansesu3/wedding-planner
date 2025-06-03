@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 const Page = () => {
   const [guestData, setGuestData] = useState({
@@ -51,16 +52,26 @@ const Page = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#fff6f5]">
-      <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-gray-400">Registrar Usuario</h1>
+    <div className="relative min-h-screen flex items-center justify-center bg-gray-100 ">
+      {/* Fondo con imagen */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/fondo-boda-1.jpg"
+          alt="Fondo boda"
+          layout="fill"
+          objectFit="cover"
+          className="blur-[2px] brightness-50"
+        />
+      </div>
+      <div className="relative z-10 bg-white/30 backdrop-blur-md  p-8 rounded-xl shadow-lg max-w-md w-full mx-2">
+        <h1 className="text-2xl font-bold mb-4 text-[#fff]">Registrar Usuario</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <input
             type="text"
             name="nombre"
             value={guestData.nombre}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-gray-500"
+            className="w-full p-2 border-none rounded text-gray-700 bg-white"
             placeholder="Nombre"
           />
           <input
@@ -68,7 +79,7 @@ const Page = () => {
             name="correo"
             value={guestData.correo}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-gray-500"
+            className="w-full p-2 border-none rounded text-gray-700 bg-white"
             placeholder="Correo"
           />
           <input
@@ -76,7 +87,7 @@ const Page = () => {
             name="password"
             value={guestData.password}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-gray-500"
+            className="w-full p-2 border-none rounded text-gray-700 bg-white"
             placeholder="Contraseña"
           />
           <input
@@ -84,21 +95,21 @@ const Page = () => {
             name="confirmPassword"
             value={guestData.confirmPassword}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-gray-500"
+            className="w-full p-2 border-none rounded text-gray-700 bg-white"
             placeholder="Confirmar Contraseña"
           />
           <select
             name="rol"
             value={guestData.rol}
             onChange={handleChange}
-            className="w-full p-2 border rounded text-gray-500"
+            className="w-full p-2 border-none rounded text-gray-700 bg-white"
           >
-            <option value="invitado text-gray-400">Invitado</option>
+            <option value="invitado text-gray-500">Invitado</option>
             <option value="admin">Administrador</option>
           </select>
           <button
             type="submit"
-            className="w-full bg-[#d49e7b] hover:bg-pink-600 text-white py-2 rounded"
+            className="w-full bg-[#C97C5D] hover:bg-[#ff9064]  text-white py-2 rounded cursor-pointer"
           >
             Registrar
           </button>

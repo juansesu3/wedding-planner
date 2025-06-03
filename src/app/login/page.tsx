@@ -51,7 +51,7 @@ export default function LoginPage() {
                     alt="Fondo boda"
                     layout="fill"
                     objectFit="cover"
-                    className="brightness-50"
+                    className=" blur-[1px] brightness-60"
                 />
             </div>
 
@@ -102,7 +102,7 @@ export default function LoginPage() {
                     <button
                         type="submit"
                         disabled={loading}
-                        className="w-full bg-[#D8A48F] text-white py-2 rounded-md font-semibold hover:bg-[#c4a88f] transition disabled:opacity-50 shadow-2xl"
+                        className="w-full cursor-pointer bg-[#C97C5D] text-white py-2 rounded-md font-semibold hover:bg-[#ff9064] transition disabled:opacity-50 shadow-2xl"
                     >
                         {loading ? 'Verificando...' : 'Ingresar'}
                     </button>
