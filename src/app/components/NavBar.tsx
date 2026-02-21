@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
+
 import {
   FaHome,
   FaCalendarAlt,
@@ -11,6 +12,9 @@ import {
   FaCog,
   FaBars
 } from 'react-icons/fa';
+
+import { MdOutlineTableRestaurant } from "react-icons/md";
+
 
 const NavBar = ({children}: {children: React.ReactNode}) => {
   const pathname = usePathname(); // obtenemos la ruta actual
@@ -25,6 +29,7 @@ const NavBar = ({children}: {children: React.ReactNode}) => {
     { name: 'Inicio', icon: <FaHome />, href: '/' },
     { name: 'Agenda', icon: <FaCalendarAlt />, href: '/agenda' },
     { name: 'Invitados', icon: <FaUsers />, href: '/invitados' },
+    { name: 'Siting Plan', icon: <MdOutlineTableRestaurant />, href: '/siting-plan' },
     { name: 'Proveedores', icon: <FaTruck />, href: '/proveedores' },
     { name: 'Presupuesto', icon: <FaDollarSign />, href: '/presupuesto' },
     { name: 'Configuración', icon: <FaCog />, href: '/configuracion' },
